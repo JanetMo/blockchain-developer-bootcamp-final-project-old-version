@@ -1,0 +1,17 @@
+1. Booking an appointment 
+
+function book (uint appointmentId)  {
+  
+
+  return petId;
+  };
+
+2. Retrieving the appointment
+
+function getAppointment () public view returns (address memory) {
+
+  return adopters;
+    }
+
+
+
