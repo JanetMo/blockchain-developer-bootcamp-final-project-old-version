@@ -1,21 +1,26 @@
+// SPDX-License-Identifier: MIT
 pragma solidity ^0.5.0;
+/// @title Register your medical appointment on the blockchain.
+/// @author JanetMo
+/// @notice This is a test contract, it's only deployed on the testnet.
+/// custom:experimental This is an experimental contract.
 
 contract Booking {
-    
-    address[16] public patients;
 
-// Booking an appointment
-    function book(uint appointmentId) public returns (uint) {
-        require(appointmentId >= 0 && appointmentId <= 15);
+address[16] public patients;
 
-        patients[appointmentId] = msg.sender;
+/// Booking a medical appointment
+function book(uint appId) public returns (uint) {
+  require(appId >= 0 && appId <= 5);
 
-        return appointmentId;
-    }
+  patients[appId] = msg.sender;
 
-  // Retrieving the appointment
-    function getPatients() public view returns (address[16] memory) {
-        return patients;
+  return appId;
+  }
+
+  /// Retrieving the appointment
+function getPatients() public view returns (address[16] memory) {
+  return patients;
     }
 
 

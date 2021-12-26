@@ -4,15 +4,14 @@ var ethJSABI = require("ethjs-abi");
 var BlockchainUtils = require("truffle-blockchain-utils");
 var Web3 = require("web3");
 
-// For browserified version. If browserify gave us an empty version,
-// look for the one provided by the user.
+
 if (typeof Web3 == "object" && Object.keys(Web3).length == 0) {
   Web3 = global.Web3;
 }
 
 var contract = (function(module) {
 
-  // Planned for future features, logging, etc.
+ 
   function Provider(provider) {
     this.provider = provider;
   }
@@ -34,7 +33,7 @@ var contract = (function(module) {
     is_big_number: function(val) {
       if (typeof val != "object") return false;
 
-      // Instanceof won't work because we have multiple versions of Web3.
+      
       try {
         new BigNumber(val);
         return true;
@@ -50,8 +49,7 @@ var contract = (function(module) {
           return null;
         }
 
-        // This function has been adapted from web3's SolidityEvent.decode() method,
-        // and built to work with ethjs-abi.
+        
 
         var copy = Utils.merge({}, log);
 
@@ -675,7 +673,6 @@ var contract = (function(module) {
         throw new Error(this.contract_name + " has no network id set, cannot lookup artifact data. Either set the network manually using " + this.contract_name + ".setNetwork(), run " + this.contract_name + ".detectNetwork(), or use new(), at() or deployed() as a thenable which will detect the network automatically.");
       }
 
-      // TODO: this might be bad; setting a value on a get.
       if (this._json.networks[network_id] == null) {
         throw new Error(this.contract_name + " has no network configuration for its current network id (" + network_id + ").");
       }
@@ -714,7 +711,7 @@ var contract = (function(module) {
           };
         }
 
-        // Finally, set the address.
+        // Set the address.
         this.network.address = val;
       }
     },

@@ -1,130 +1,51 @@
 [
   {
     "id": 0,
-    "name": "Dr. Doe",
-    "picture": "images/drdoe.jpeg",
-    "date": 2,
-    "specialization": "cardoliogist",
+    "name": "Dr. Dean",
+    "picture": "images/drdean.jpeg",
+    "date": 1,
+    "specialization": "Cardiologist",
     "location": "Sun area"
   },
   {
     "id": 1,
-    "name": "Dr. Doe",
-    "picture": "images/drdoe.jpeg",
-    "date": 1,
-    "specialization": "i",
+    "name": "Dr. Dean",
+    "picture": "images/drdean.jpeg",
+    "date": 2,
+    "specialization": "Cardiologist",
     "location": "Sun area"
   },
   {
     "id": 2,
-    "name": "Dr. Doe",
-    "picture": "images/drdoe.jpeg",
-    "date": 2,
-    "specialization": "i",
+    "name": "Dr. Dean",
+    "picture": "images/drdean.jpeg",
+    "date": 3,
+    "specialization": "Cardiologist",
     "location": "Sun area"
   },
   {
     "id": 3,
-    "name": "Dr. Dean",
-    "picture": "images/drdean.jpeg",
-    "date": 3,
-    "specialization": "lung specialist",
+    "name": "Dr. Doe",
+    "picture": "images/drdoe.jpeg",
+    "date": 4,
+    "specialization": "Lung specialist",
     "location": "Melon Beach"
   },
   {
     "id": 4,
-    "name": "Dr. Dean",
-    "picture": "images/drdean.jpeg",
-    "date": 4,
-    "specialization": "lung specialist",
+    "name": "Dr. Doe",
+    "picture": "images/drdoe.jpeg",
+    "date": 5,
+    "specialization": "Lung specialist",
     "location": "Melon Beach"
   },
   {
     "id": 5,
-    "name": "Dr. Dean",
-    "picture": "images/drdean.jpeg",
-    "date": 5,
-    "specialization": "lung specialist",
+    "name": "Dr. Doe",
+    "picture": "images/drdoe.jpeg",
+    "date": 6,
+    "specialization": "Lung specialist",
     "location": "Melon Beach"
-  },
-  {
-    "id": 6,
-    "name": "Latisha",
-    "picture": "images/golden-retriever.jpeg",
-    "age": 3,
-    "breed": "Golden Retriever",
-    "location": "Soudan, Louisiana"
-  },
-  {
-    "id": 7,
-    "name": "Coleman",
-    "picture": "images/golden-retriever.jpeg",
-    "age": 3,
-    "breed": "Golden Retriever",
-    "location": "Jacksonwald, Palau"
-  },
-  {
-    "id": 8,
-    "name": "Nichole",
-    "picture": "images/french-bulldog.jpeg",
-    "age": 2,
-    "breed": "French Bulldog",
-    "location": "Honolulu, Hawaii"
-  },
-  {
-    "id": 9,
-    "name": "Fran",
-    "picture": "images/boxer.jpeg",
-    "age": 3,
-    "breed": "Boxer",
-    "location": "Matheny, Utah"
-  },
-  {
-    "id": 10,
-    "name": "Leonor",
-    "picture": "images/boxer.jpeg",
-    "age": 2,
-    "breed": "Boxer",
-    "location": "Tyhee, Indiana"
-  },
-  {
-    "id": 11,
-    "name": "Dean",
-    "picture": "images/scottish-terrier.jpeg",
-    "age": 3,
-    "breed": "Scottish Terrier",
-    "location": "Windsor, Montana"
-  },
-  {
-    "id": 12,
-    "name": "Stevenson",
-    "picture": "images/french-bulldog.jpeg",
-    "age": 3,
-    "breed": "French Bulldog",
-    "location": "Kingstowne, Nevada"
-  },
-  {
-    "id": 13,
-    "name": "Kristina",
-    "picture": "images/golden-retriever.jpeg",
-    "age": 4,
-    "breed": "Golden Retriever",
-    "location": "Sultana, Massachusetts"
-  },
-  {
-    "id": 14,
-    "name": "Ethel",
-    "picture": "images/golden-retriever.jpeg",
-    "age": 2,
-    "breed": "Golden Retriever",
-    "location": "Broadlands, Oregon"
-  },
-  {
-    "id": 15,
-    "name": "Terry",
-    "picture": "images/golden-retriever.jpeg",
-    "age": 2,
-    "breed": "Golden Retriever",
-    "location": "Dawn, Wisconsin"
   }
+  
 ]

@@ -3,20 +3,20 @@ App = {
   contracts: {},
 
   init: async function() {
-    // Load appointments.
+    // Load appointments
     $.getJSON('../appointments.json', function(data) {
-      var appointmentsRow = $('#appointmentsRow');
-      var appointmentTemplate = $('appointmentTemplate');
+      var appsRow = $('#appsRow');
+      var appTemplate = $('#appTemplate');
 
       for (i = 0; i < data.length; i ++) {
-        appointmentTemplate.find('.panel-title').text(data[i].name);
-        appointmentTemplate.find('img').attr('src', data[i].picture);
-        appointmentTemplate.find('.appointment-specialization').text(data[i].specialization);
-        appointmentTemplate.find('.appointment-date').text(data[i].date);
-        appointmentTemplate.find('.appointment-location').text(data[i].location);
-        appointmentTemplate.find('.btn-book').attr('data-id', data[i].id);
+        appTemplate.find('.panel-title').text(data[i].name);
+        appTemplate.find('img').attr('src', data[i].picture);
+        appTemplate.find('.appointment-specialization').text(data[i].specialization);
+        appTemplate.find('.appointment-date').text(data[i].date);
+        appTemplate.find('.appointment-location').text(data[i].location);
+        appTemplate.find('.btn-book').attr('data-id', data[i].id);
 
-        appointmentsRow.append(appointmentTemplate.html());
+        appsRow.append(appTemplate.html());
       }
     });
 
@@ -24,7 +24,8 @@ App = {
   },
 
   initWeb3: async function() {
-        // Modern dapp browsers...
+
+    // Modern dapp browsers...
     if (window.ethereum) {
       App.web3Provider = window.ethereum;
       try {
@@ -49,17 +50,18 @@ App = {
   },
 
   initContract: function() {
-    $.getJSON('Booking.json', function(data) {
-      // Get the necessary contract artifact file and instantiate it with @truffle/contract
-      var BookingArtifact = data;
-      App.contracts.Booking = TruffleContract(BookingArtifact);
-    
-      // Set the provider for our contract
-      App.contracts.Booking.setProvider(App.web3Provider);
-    
-      // Use our contract to retrieve and mark the adopted pets
-      return App.markBooked();
-    });
+
+      $.getJSON('Booking.json', function(data) {
+    // Get the necessary contract artifact file and instantiate it with @truffle/contract
+    var BookingArtifact = data;
+    App.contracts.Booking = TruffleContract(BookingArtifact);
+
+    // Set the provider for our contract
+    App.contracts.Booking.setProvider(App.web3Provider);
+
+    // Use our contract to retrieve and mark the booek appointments
+    return App.markBooked();
+  });
 
     return App.bindEvents();
   },
@@ -69,29 +71,29 @@ App = {
   },
 
   markBooked: function() {
-        var bookingInstance;
+    var BookingInstance;
 
-    App.contracts.Booking.deployed().then(function(instance) {
-      bookingInstance = instance;
+      App.contracts.Booking.deployed().then(function(instance) {
+        BookingInstance = instance;
 
-      return bookingInstance.getPatients.call();
-    }).then(function(patients) {
-      for (i = 0; i < patients.length; i++) {
-        if (patients[i] !== '0x0000000000000000000000000000000000000000') {
-          $('.panel-appointment').eq(i).find('button').text('Success').attr('disabled', true);
+        return BookingInstance.getPatients.call();
+      }).then(function(patients) {
+        for (i = 0; i < patients.length; i++) {
+          if (patients[i] !== '0x0000000000000000000000000000000000000000') {
+            $('.panel-app').eq(i).find('button').text('Success').attr('disabled', true);
+          }
         }
-      }
-    }).catch(function(err) {
-      console.log(err.message);
-    });
+      }).catch(function(err) {
+        console.log(err.message);
+      });
   },
 
   handleBook: function(event) {
     event.preventDefault();
 
-    var appointmentId = parseInt($(event.target).data('id'));
+    var appId = parseInt($(event.target).data('id'));
 
-    var bookingInstance;
+        var BookingInstance;
 
     web3.eth.getAccounts(function(error, accounts) {
       if (error) {
@@ -101,11 +103,11 @@ App = {
       var account = accounts[0];
 
       App.contracts.Booking.deployed().then(function(instance) {
-        bookingInstance = instance;
+        BookingInstance = instance;
 
-        // Execute adopt as a transaction by sending account
-        return bookingInstance.book(appointmentId, {from: account});
-      }).then(function(result) {npm
+        // Execute booking as a transaction by sending account
+        return BookingInstance.book(appId, {from: account});
+      }).then(function(result) {
         return App.markBooked();
       }).catch(function(err) {
         console.log(err.message);
